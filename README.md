@@ -1,6 +1,16 @@
 # guildai-examples-ja
 実験管理ツールGuild AIのコードサンプル
 
-## 環境構築
-- サンプルディレクトリに移動して, pipenvの仮想環境をアクティベートする. pipenvを使用しない場合はrequirements.txtからパッケージをインストールする.
-- 実行方法は各サンプルのREADME.mdを参照.
+## pipenvによる環境構築
+リポジトリをクローンし, パッケージをインストール
+```
+git clone https://github.com/fury00812/guildai-examples-ja.git
+cd guildai-examples-ja
+pipenv install
+``` 
+仮想環境をアクティベート
+```
+pipenv shell
+```
+
+- pipenvを使用しない場合は, requirements.txtに記載の必要パッケージをインストールする.
