@@ -1,0 +1,28 @@
+train:
+  description: Train sample Pytorch chatbot
+  main: chatbot_tutorial
+  python-requires: '>=3.6'
+  flags:
+    $dest: globals
+    clip: 50.0
+    teacher_forcing_ration: 1.0
+    learning_rate: 0.0001
+    decoder_learning_ratio: 5.0
+    n_iteration: 50
+    print_every: 10
+    save_every: 500
+  output-scalars:
+    step: 'Iteration: (\d+)'
+    loss: 'Average loss: (\d+\.\d+)'
+  compare:
+    - loss step as step
+    - loss
+    - =clip
+    - =decoder_learning_ratio
+    - =learning_rate
+    - =teacher_forcing_ratio
+  requires:
+    path: data
+    sources:
+      - url: http://www.cs.cornell.edu/~cristian/data/cornell_movie_dialogs_corpus.zip
+        sha256: 3bde8a571f615201bc2d2453e22878090719638592f774720eddec739de8c900
