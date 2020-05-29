@@ -1,6 +1,10 @@
 # guildai-examples-ja
 実験管理ツールGuild AIのコードサンプル
 
+## 要件
+- Python 3.7
+- Pytorch 1.4
+
 ## pipenvによる環境構築
 リポジトリをクローンし, パッケージをインストール
 ```
