@@ -1,0 +1,12 @@
+train:
+  description: Train sample
+  main: train
+  python-requires: '>=3.6'
+  flags:
+    $dest: globals
+    x: 0.2
+    y: 0.2
+    noise: 0.2
+  compare:
+    - loss
+
