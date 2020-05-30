@@ -1,0 +1,24 @@
+train:
+  description: Train sample Pytorch seq2seq translation
+  main: seq2seq_translation_tutorial
+  python-requires: '>=3.6'
+  flags-dest: args
+  flags:
+    file_path: 'data/aspec.test.ja-en'
+    src_lang: 'ja'
+    tgt_lang: 'en'
+    hidden_size: 256
+    n_iters: 2000
+    print_every: 100
+    learning_rate: 0.01
+    MAX_LENGTH: 50
+  output-scalars:
+    step: 'Iteration: (\d+)'
+    loss: 'Average loss: (\d+\.\d+)'
+  compare:
+    - loss step as step
+    - loss
+    - =n_iters
+    - =learning_rate
+  requires:
+   - file: data
