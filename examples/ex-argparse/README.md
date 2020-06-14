@@ -1,8 +1,9 @@
 # ex-argparse
 argparseモジュールとの併用
 
-``
+```
 $ guild run train
+```
 
 # 標準出力
 Refreshing flags...
