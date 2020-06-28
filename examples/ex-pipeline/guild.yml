@@ -1,0 +1,28 @@
+preprocess:
+  description: run preprocess.py
+  main: preprocess
+  flags-dest: args
+  flags:
+    data: "preprocess.ad-hoc"
+
+train:
+  description: run train.py 
+  main: train
+  python-requires: '>=3.6'
+  flags-dest: args 
+  flags:
+    x: 0.2
+    noise: 0.2
+  compare:
+    - loss
+
+end-to-end:
+  description: run an end-to-end pipeline
+  flags-dest: args
+  steps:
+    - run: preprocess
+      flags:
+        data: "preprocess.end-to-end"
+    - run: train
+      flags:
+        x: 0.3
